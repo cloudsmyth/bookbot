@@ -1,2 +1,1 @@
-# bookbot
-Boot.Dev Python project
+BookBot is my first project!
