@@ -1,11 +1,18 @@
+import sys
+from stats import get_num_words
+
+
 def main():
-    book = "books/frankenstein.txt"
+    if len(sys.argv) < 2:
+        print("Usage: pyhton3 main.py <path-to-book>")
+        sys.exit(1)
+    book = sys.argv[1]
     with open(book) as f:
         file_contents = f.read()
-        words = file_contents.split()
+        words = get_num_words(file_contents)
         char_freq = char_occurance(file_contents)
         print(f"----- Begin Report of {book} -----")
-        print(f"{len(words)} words were found in this book")
+        print(f"{len(words)} words found in the book")
         print_char_freq(char_freq)
         print("----- End Report -----")
 
